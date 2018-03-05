@@ -1,0 +1,56 @@
+//
+//  PrefixHeader.pch
+//  changeTabBarController
+//
+//  Created by Z on 2018/3/2.
+//  Copyright © 2018年 Z. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#import "UIView+GMCategory.h"
+#import "WRNavigationBar.h"
+#import "WRCustomNavigationBar.h"
+
+
+#define KBackGroundColor GM_RGBColor(234, 236, 241)     //页面背景色
+#define KSpinKitColor GM_RGBColor(52, 146, 233)         //navBar背景色 
+
+
+//弱引用  强引用
+#define WEAK_SELF(value) __weak typeof(self) value = self
+#define STRONG_SELF(value) __strong typeof(self) value = self
+
+
+
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define SCREEN_SIZE [UIScreen mainScreen].bounds.size
+#define SCREEN_BOUNDS [UIScreen mainScreen].bounds
+
+//设置随机颜色
+#define GM_RandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]
+
+//设置RGB颜色/设置RGBA颜色
+#define GM_RGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define GM_RGBAColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(r)/255.0 blue:(r)/255.0 alpha:a]
+//clear背景颜色
+#define GM_ClearColor [UIColor clearColor]
+
+
+//判断是否为 iPhone X
+#define iPhoneX [[UIScreen mainScreen] bounds].size.width == 375.f && [[UIScreen mainScreen] bounds].size.height == 812.f
+
+
+#ifdef DEBUG
+#define NSLog(...) NSLog(@"%s 第%d行 \n %@\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+#else
+#define NSLog(...)
+#endif
+
+
+
+
+#endif /* PrefixHeader_pch */
